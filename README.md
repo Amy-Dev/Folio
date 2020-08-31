@@ -1,2 +1,2 @@
 # Folio
-Welcom to my folio
+Welcome to my folio
