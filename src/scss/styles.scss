@@ -1,6 +1,134 @@
 body {
     background-color: #000A21;
-    h1 {
-        color: #F11D58;
+
+    //-------- MENU BURGER --------//
+    nav {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color:#F11D58;
+        height: 50px;
+        width: 50px;
+        overflow: hidden;
+        transition: height 0.5s, width 0.5s, left 0.5s, bottom 0.5s;
     }
+
+    nav.is-open{ 
+        height: 100vh;
+        width: 100vw;
+        left:0;
+        top:0;
+    }
+
+    .open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        top: 0px;
+        left: 0px;
+    }
+
+    .open-icon {
+        transition: background-color 0.3s;
+    }
+
+    .open-icon, .open-icon::before, .open-icon::after{
+        width: 36px;
+        height: 4px;
+        background:white;
+    }
+
+    .open-icon::before, .open-icon::after{
+        content:'';
+        display: block;
+        transition: transform 0.3s;
+    }
+
+    .open-icon::before {
+        transform: translateY(-10px);
+    }
+
+    .open-icon::after {
+        transform: translateY(6px);
+    }
+
+    nav.is-open .open-icon {
+        background-color: transparent ;
+    }
+
+    nav.is-open .open-icon::before {
+        transform: translateY(2px) rotate(45deg);
+    }
+
+    nav.is-open .open-icon::after {
+        transform: translateY(-2px) rotate(-45deg);
+    }
+
+    ul {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        transform: translate(calc(-55vw + 10px), calc(-45vh + 10px))scale(0);
+        transition: transform 0.5s;
+    }
+
+    nav.is-open ul {
+        transform: none;
+    }
+
+    nav:not(.is-open) ul {
+        pointer-events: none;
+    }
+
+    li {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        list-style: none;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 20px;
+    } 
+
+@media (min-width: 600px) {
+    nav {
+        width: 100%;
+    }
+
+    nav.is-open {
+        height: 50px;
+    }
+
+    .open {
+        display: none;
+    }
+
+    ul {
+        position: static;
+        opacity: 1;
+        transform: none;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    li {
+        margin-bottom: 0;
+    }
+    li:not(:last-child) {
+        margin-bottom: 0;
+    }
+}
+
 }
