@@ -4,15 +4,19 @@ body {
 
     //-------- HEADER --------//
 .header {
+    position: fixed;
     height: 50px;
     width: 100%;
+    top:0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: #000A21;
     
 
     //-------- HEADER M --------//
     nav {
+        z-index: 10;
         position: fixed;
         top: 0px;
         left: 0px;
@@ -167,11 +171,11 @@ body {
     margin-left: 15px;
     color: white;
     font-family: poppins-semibold;
-    margin-top: 30px;
+    margin-top: 90px;
     line-height: 120%;
     div {
         overflow: hidden;
-        position: fixed;
+        //position: fixed;
         float: right;
         height: 65px;
         padding-top: 10px;
@@ -183,6 +187,7 @@ body {
             height: 45px;
             margin-bottom: 45px;
             display: block;
+            margin-left: 5%;
         }
     }
 }
@@ -238,5 +243,133 @@ body {
     }
     
 }
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    margin-left: 20px;
+    margin-top:20px;
+    height: 40px;
+    width: 50%;
+    
+    p {
+        font-family: poppins-semibold;
+        color: white;
+        font-size: 14px;
 
+    }
+}
+.slideshow{
+
+//border: 5px solid white;
+//box-shadow: 0 0 5px hsla(0,0%,0%,.5);
+z-index: -10;
+overflow: hidden;
+width: 90%;
+margin: 4rem auto;
+position: relative;
+}
+.slideshow ul{
+
+    padding-bottom: 50%;/* ratio pour le responsive */
+    margin: 1;
+    list-style-type: none;
+        
+    }
+         
+    .slideshow li{
+    
+    top: 0;
+    left: 0;
+    animation: slideshow 15s ease infinite;
+    position: absolute;
+    opacity: 0;
+    }
+    .slideshow li:nth-child(2){
+
+        animation-delay: 5s  
+    }
+
+    .slideshow li:nth-child(3){
+
+        animation-delay: 10s
+    }
+
+    @keyframes slideshow{
+	
+        0%{opacity: 0}
+        10%{opacity: 1}
+        20%{opacity: 1}
+        25%{opacity: 0}
+        100%{opacity: 0}
+        }
+    .slideshow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100%;
+        }
+    }
+        /*****barre progression *****/
+.barre_progression{ 
+	
+    position: absolute;
+    left: 0;
+    bottom: 0.5px;
+    height: 5px;
+    background: white;
+    animation: barre_progression 25s ease-out infinite;
+        
+    }
+        
+    /*****animation barre progression *****/    
+    @keyframes barre_progression{
+        
+    0%,20%,40%,60%,80%,100%{width: 0%;opacity: 0}
+        
+    4%,24%,44%,64%,84%{width: 0%;opacity: .3}
+        
+    16%,36%,56%,76%,96%{width: 100%;opacity: .7}
+        
+    17%,37%,57%,77%,97%{width: 100%;opacity: .3}
+        
+    18%,38%,58%,78%,98%{width: 100%;opacity: 0}
+        
+    }
+
+    .text__Slide {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: poppins-light;
+        font-size: 15px;
+        color: white;
+        width: 80%;
+        line-height: 145%;
+        margin: 2rem auto;
+
+        span {
+            color: #F11D58;
+        }
+        .Slide{
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            margin-top:20px;
+            height: 40px;
+            width: 50%;
+                
+            p {
+                font-family: poppins-semibold;
+                color: white;
+                font-size: 14px;
+            
+            }}
+        }
+    }
 }
