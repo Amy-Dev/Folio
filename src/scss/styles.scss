@@ -9,10 +9,11 @@ body {
     width: 100%;
     top:0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background-color: #000A21;
     
+
 
     //-------- HeadeR MenU --------//
     nav {
@@ -107,13 +108,13 @@ body {
 
     nav:not(.is-open) ul {
         pointer-events: none;
-        background-color: #F11D58;
+        background-color: #000A21;
     }
 
     li {
         font-size: 30px;
         text-transform: uppercase;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: poppins-semibold;
         color: #000A21;
         list-style: none;
     }
@@ -122,9 +123,25 @@ body {
         margin-bottom: 20px;
     } 
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
+    .everything {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        
+        padding-left: 10px;
+        img {
+            height: 70px;
+        }
+    }
     nav {
-        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        height: 70px;
     }
 
     nav.is-open {
@@ -133,35 +150,43 @@ body {
 
     .open {
         display: none;
+        
     }
 
     ul {
         position: static;
-        opacity: 1;
         transform: none;
         height: 100%;
         flex-direction: row;
         justify-content: space-around;
+        
     }
 
     li {
         margin-bottom: 0;
         color: white;
+        font-size: 16px;
     }
     li:not(:last-child) {
         margin-bottom: 0;
     }
+    
 }
 
+
 .logo {
+    margin-top: 1px;
+    margin-left: 50%;
     img {
-        height: 50px;
+        height: 45px;
     }
 }
+
 .networks {
-    margin-left: 100px;
     margin-right: 10px;
-    height: 30px;
+    img {
+    height: 30px;  
+    }
 }
 }
 
@@ -184,7 +209,7 @@ body {
             font-family: poppins-semibold;
             
             color: #F11D58;
-            padding: 0 100px;
+            padding: 0 110px;
             height: 45px;
             margin-bottom: 45px;
             display: block;
@@ -234,7 +259,7 @@ body {
     font-family: poppins-light;
     color: white;
     margin-left:20px;
-    margin-top:25px;
+    margin-top:10px;
     width: 85%;
     font-size: 16px;
     line-height: 145%;
@@ -244,23 +269,7 @@ body {
     }
     
 }
-.button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid white;
-    margin-left: 20px;
-    margin-top:20px;
-    height: 40px;
-    width: 50%;
-    
-    p {
-        font-family: poppins-semibold;
-        color: white;
-        font-size: 14px;
 
-    }
-}
 
 //-------- CarrouseL DE PhotO DE ProjetS --------//
 
@@ -375,13 +384,14 @@ position: relative;
         }
     }
 
-//-------- MaiS QuI JE SuiS --------/
+//-------- MaiS QuI JE SuiS --------//
 
 
     .me {
+        display: flex;
         background-color: white;
         margin-top: 10px;
-        height: 240px;
+        //height: 200px;
 
         .megroup {
             display: flex;
@@ -394,7 +404,7 @@ position: relative;
             font-family: poppins-semibold;
             color: black;
             font-size: 18px;
-            margin-top: 15px;
+            margin-top: 20px;
             span {
                 color: #F11D58;
             }
@@ -402,20 +412,23 @@ position: relative;
         p {
             font-family: poppins-light;
             font-size: 14px;
-            width: 95%;
-            margin-top: 25px;
+            //width: 95%;
+            margin-top: 15px;
             line-height: 145%;
+            margin-right: 0;
             }
             .button {
-
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border: 2px solid #F11D58;
             width: 150px;
             height: 25px;
             margin-left: 0;
+            margin-top: 10px;
+            margin-bottom: 20px;
 
             p {
-            display: flex;
-            justify-content: center;
             font-family: poppins-semibold;
             color: #F11D58;
             font-size: 14px;
@@ -426,20 +439,69 @@ position: relative;
         
         .photo {
             display: flex;
+            align-items: center;
             img {
-              height: 150px;
-              margin-top: 30px;
+              height: 160px;
+              margin-left: 10px;
             }
             
         }
     }
-    .photo {
+}
+//-------- FooteR --------//
+
+.footer {
+    background-color: #F11D58; 
+
+    .container {
         display: flex;
-        img {
-          height: 150px;
-          margin-top: 30px;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 80px;
+
+        .contact {
+            margin-left: 10px;
+            margin-top: 10px;
+            
+            h3 {
+                font-family: poppins-semibold;
+                font-size: 13px;
+            }
+            h4 {
+                margin-top: 3px;
+                font-family: poppins-light;
+                font-size: 11px;
+            }
+            img {
+                margin-top: 3px;
+                height: 15px;
+            }
         }
-        
+        .portfolio {
+            margin-right: 10px;
+            margin-top: 10px;
+            
+            h3 {
+                font-family: poppins-semibold;
+                font-size: 13px;
+            }
+            h4 {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 3px;
+                font-family: poppins-light;
+                font-size: 11px;
+            }
+        }
     }
+    p {
+        display: flex;
+        justify-content: center;
+        font-family: poppins-light;
+        font-size: 8px;
+        padding-bottom: 5px;
     }
 }
+
+}
+
