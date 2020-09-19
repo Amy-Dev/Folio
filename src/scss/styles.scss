@@ -33,7 +33,6 @@ body {
         width: 100vw;
         left:0;
         top:0;
-        background-color:#F11D58;
     }
 
     .open {
@@ -108,7 +107,6 @@ body {
 
     nav:not(.is-open) ul {
         pointer-events: none;
-        background-color: #000A21;
     }
 
     li {
@@ -123,34 +121,43 @@ body {
         margin-bottom: 20px;
     } 
 
-@media (min-width: 700px) {
-    .everything {
-        display: flex;
-        justify-content: center;
-    }
-
     .logo {
-        
-        padding-left: 10px;
+        //display: none;
+        margin-top: 1px;
+        margin-left: 50%;
         img {
-            height: 70px;
+            height: 45px;
         }
     }
+}
+@media (min-width: 700px) {
+
+    .header {
+        height: 70px;
+    
+.logo {
+    //display: none;
+    margin-top: 5px;
+    margin-left: 20px;
+    img {
+        height: 45px;
+    }
+}
     nav {
+        background-color: #000A21;
         position: relative;
         display: flex;
         justify-content: center;
-        width: 50%;
-        height: 70px;
+        width: 100%;
+        //height: 70px;
     }
 
     nav.is-open {
-        height: 50px;
+        height: 70px;
     }
 
     .open {
         display: none;
-        
     }
 
     ul {
@@ -163,7 +170,7 @@ body {
     }
 
     li {
-        margin-bottom: 0;
+        //margin-bottom: 0;
         color: white;
         font-size: 16px;
     }
@@ -173,19 +180,13 @@ body {
     
 }
 
-
-.logo {
-    margin-top: 1px;
-    margin-left: 50%;
-    img {
-        height: 45px;
-    }
-}
-
 .networks {
-    margin-right: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
     img {
-    height: 30px;  
+    height: 30px; 
+    margin-left: 5px; 
     }
 }
 }
@@ -207,7 +208,6 @@ body {
         margin-top: -41px;
         li {
             font-family: poppins-semibold;
-            
             color: #F11D58;
             padding: 0 110px;
             height: 45px;
@@ -290,11 +290,11 @@ position: relative;
          
     .slideshow li{
     
-    top: 0;
+    //top: 0;
     left: 0;
     animation: slideshow 15s ease infinite;
     position: absolute;
-    opacity: 0;
+    //opacity: 0;
     }
     .slideshow li:nth-child(2){
 
